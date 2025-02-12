@@ -1,7 +1,7 @@
 const express = require('express');
 
 const authRouter = require('./auth.route');
-const bookRouter = require('./book.route');
+const workoutRouter = require('./fitness.route');
 
 const router = express.Router();
 
@@ -10,6 +10,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/auth', authRouter);
-router.use('/books', bookRouter);
+router.use('/workout', workoutRouter);
 
 module.exports = router;
