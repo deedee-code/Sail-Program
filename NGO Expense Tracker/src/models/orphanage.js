@@ -2,16 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const bookSchema = new Schema({
-    title: {
-        type: String,
-        required: true
-    },
-    author: {
-        type: String,
-        required: true
-    },
-    genre: {
+const orphanageSchema = new Schema({
+    name: {
         type: String,
         required: true
     },
@@ -19,24 +11,28 @@ const bookSchema = new Schema({
         type: String,
         required: true
     },
-    publicationDate: {
-        type: Date,
-        required: true
-    },
-    isbn: {
+    address: {
         type: String,
         required: true
     },
-    quantity: {
+    numberOfOrphans: {
         type: Number,
         required: true
     },
-    available: {
-        type: Boolean,
-        default: true
+    dateVisited: {
+        type: Date,
+        required: true
+    },
+    itemsTaken: [{
+        type: String,
+        required: true
+    }],
+    moneySpent: {
+        type: Number,
+        required: true
     }
 }, {
     timestamps: true
 })
 
-module.exports = mongoose.model('Book', bookSchema);
+module.exports = mongoose.model('Orphanage', orphanageSchema);
